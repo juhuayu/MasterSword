@@ -32,3 +32,4 @@ masterswordcode\rc522_use.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_p
 masterswordcode\rc522_use.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 masterswordcode\rc522_use.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 masterswordcode\rc522_use.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+masterswordcode\rc522_use.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h

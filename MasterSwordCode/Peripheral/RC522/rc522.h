@@ -1,5 +1,5 @@
-#ifndef _RC522_H
-#define _RC522_H 
+#ifndef __RC522_H
+#define __RC522_H 
 
 #include <stdio.h>
 #include "spi.h"
@@ -125,13 +125,13 @@ void MFRC522_AntennaOn(void);
 void MFRC522_AntennaOff(void);
 
 uint8_t MFRC522_ToCard(uint8_t command, uint8_t* sendData, uint8_t sendLen, uint8_t* backData, uint16_t* backLen);
-uint8_t MFRC522_Request(uint8_t reqMode, uint8_t* TagType);
-uint8_t MFRC522_Anticoll(uint8_t* serNum);
-uint8_t MFRC522_SelectTag(uint8_t* serNum);
-uint8_t MFRC522_Auth(uint8_t authMode, uint8_t BlockAddr, uint8_t* Sectorkey, uint8_t* serNum);
-uint8_t MFRC522_Read(uint8_t blockAddr, uint8_t* recvData);
-uint8_t MFRC522_Write(uint8_t blockAddr, uint8_t* writeData);
-void MFRC522_Halt(void);
+uint8_t MFRC522_Request(uint8_t reqMode, uint8_t* TagType);                                     // 寻卡
+uint8_t MFRC522_Anticoll(uint8_t* serNum);                                                   // 防冲撞
+uint8_t MFRC522_SelectTag(uint8_t* serNum);                                                 // 选卡
+uint8_t MFRC522_Auth(uint8_t authMode, uint8_t BlockAddr, uint8_t* Sectorkey, uint8_t* serNum); // 验证
+uint8_t MFRC522_Read(uint8_t blockAddr, uint8_t* recvData);                                   // 读
+uint8_t MFRC522_Write(uint8_t blockAddr, uint8_t* writeData);                                  // 写
+void MFRC522_Halt(void);                                                                 // 休眠
 void WaitCardOff(void);
 	
 #endif

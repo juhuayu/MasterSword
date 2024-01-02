@@ -23,11 +23,13 @@
 #include "i2c.h"
 #include "spi.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "rc522.h"
+#include "mpu6050.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,8 +97,22 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_TIM4_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+	
+	
+	printf("---------start!---------\n");
 
+	HAL_Delay(100);
+
+	MFRC522_Init();
+	printf("---------MFRC522_Init ok---------\n");
+	HAL_Delay(100);
+	
+	while (MPU6050_Init(&hi2c1) == 1);
+	printf("---------MPU6050_Init ok---------\n");
+
+	
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

@@ -38,8 +38,14 @@ masterswordcode\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pw
 masterswordcode\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 masterswordcode\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 masterswordcode\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+masterswordcode\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 masterswordcode\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 masterswordcode\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 masterswordcode\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 masterswordcode\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 masterswordcode\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+masterswordcode\freertos.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stdio.h
+masterswordcode\freertos.o: ../Peripheral/RC522/rc522_use.h
+masterswordcode\freertos.o: ../Peripheral/WS2812/ws2812.h
+masterswordcode\freertos.o: ../Peripheral/MPU6050/mpu6050.h
+masterswordcode\freertos.o: ../Core/Inc/i2c.h

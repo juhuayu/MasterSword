@@ -29,6 +29,7 @@ masterswordcode\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 masterswordcode\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 masterswordcode\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 masterswordcode\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+masterswordcode\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 masterswordcode\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 masterswordcode\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 masterswordcode\main.o: ../Core/Inc/FreeRTOSConfig.h
@@ -47,4 +48,8 @@ masterswordcode\main.o: ../Core/Inc/dma.h
 masterswordcode\main.o: ../Core/Inc/i2c.h
 masterswordcode\main.o: ../Core/Inc/spi.h
 masterswordcode\main.o: ../Core/Inc/tim.h
+masterswordcode\main.o: ../Core/Inc/usart.h
 masterswordcode\main.o: ../Core/Inc/gpio.h
+masterswordcode\main.o: ../Peripheral/RC522/rc522.h
+masterswordcode\main.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stdio.h
+masterswordcode\main.o: ../Peripheral/MPU6050/mpu6050.h

@@ -25,7 +25,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include "rc522_use.h"
+#include "ws2812.h"
+#include "mpu6050.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -35,7 +38,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+MPU6050_t MPU6050;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -87,7 +90,7 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+	MFRC522_Init();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -108,7 +111,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of SideLight */
@@ -161,6 +164,7 @@ void StartSideLight(void const * argument)
   for(;;)
   {
     osDelay(1);
+		rainbowCycle(20);
   }
   /* USER CODE END StartSideLight */
 }
@@ -178,7 +182,9 @@ void StartGravity(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+		MPU6050_Read_All(&hi2c1, &MPU6050);
+		printf("x:%f -- y:%f\n", MPU6050.Ax, MPU6050.Ay);
+    osDelay(100);
   }
   /* USER CODE END StartGravity */
 }
@@ -196,6 +202,7 @@ void StartSwipingCard(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+		rc522_test();
     osDelay(1);
   }
   /* USER CODE END StartSwipingCard */

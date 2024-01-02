@@ -30,6 +30,7 @@ masterswordcode\ws2812.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.
 masterswordcode\ws2812.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 masterswordcode\ws2812.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 masterswordcode\ws2812.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+masterswordcode\ws2812.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 masterswordcode\ws2812.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\string.h
 masterswordcode\ws2812.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stdio.h
 masterswordcode\ws2812.o: ../Core/Inc/tim.h

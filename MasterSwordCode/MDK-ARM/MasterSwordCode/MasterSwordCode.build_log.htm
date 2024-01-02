@@ -27,13 +27,16 @@ Project File Date:  01/02/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'X:\Keil5MDK\ARM\ARMCC\Bin'
 Build target 'MasterSwordCode'
-compiling rc522_use.c...
-compiling mpu6050.c...
-compiling rc522.c...
+compiling freertos.c...
+../Peripheral/RC522/rc522_use.h(4): warning:  #1295-D: Deprecated declaration rc522_test - give arg types
+  void rc522_test();
+../Core/Src/freertos.c(93): warning:  #223-D: function "MFRC522_Init" declared implicitly
+  	MFRC522_Init();
+../Core/Src/freertos.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=8908 RO-data=468 RW-data=128 ZI-data=5384  
+Program Size: Code=22160 RO-data=628 RW-data=332 ZI-data=6772  
 FromELF: creating hex file...
-"MasterSwordCode\MasterSwordCode.axf" - 0 Error(s), 0 Warning(s).
+"MasterSwordCode\MasterSwordCode.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
