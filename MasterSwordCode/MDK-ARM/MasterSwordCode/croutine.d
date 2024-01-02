@@ -1,0 +1,14 @@
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/croutine.c
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+masterswordcode\croutine.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stddef.h
+masterswordcode\croutine.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stdint.h
+masterswordcode\croutine.o: ../Core/Inc/FreeRTOSConfig.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h
+masterswordcode\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

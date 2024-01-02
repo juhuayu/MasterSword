@@ -1,0 +1,14 @@
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+masterswordcode\stream_buffer.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stdint.h
+masterswordcode\stream_buffer.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\string.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+masterswordcode\stream_buffer.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stddef.h
+masterswordcode\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+masterswordcode\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h

@@ -1,0 +1,12 @@
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+masterswordcode\port.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stddef.h
+masterswordcode\port.o: X:\Keil5MDK\ARM\ARMCC\Bin\..\include\stdint.h
+masterswordcode\port.o: ../Core/Inc/FreeRTOSConfig.h
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+masterswordcode\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

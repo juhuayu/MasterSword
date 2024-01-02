@@ -57,6 +57,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define RC522_SDA_Pin GPIO_PIN_4
+#define RC522_SDA_GPIO_Port GPIOA
+#define RC522_RST_Pin GPIO_PIN_0
+#define RC522_RST_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
