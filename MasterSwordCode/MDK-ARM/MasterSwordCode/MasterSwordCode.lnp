@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"masterswordcode\startup_stm32f103xb.o"
+"masterswordcode\main.o"
+"masterswordcode\gpio.o"
+"masterswordcode\dma.o"
+"masterswordcode\tim.o"
+"masterswordcode\stm32f1xx_it.o"
+"masterswordcode\stm32f1xx_hal_msp.o"
+"masterswordcode\stm32f1xx_hal_gpio_ex.o"
+"masterswordcode\stm32f1xx_hal_tim.o"
+"masterswordcode\stm32f1xx_hal_tim_ex.o"
+"masterswordcode\stm32f1xx_hal.o"
+"masterswordcode\stm32f1xx_hal_rcc.o"
+"masterswordcode\stm32f1xx_hal_rcc_ex.o"
+"masterswordcode\stm32f1xx_hal_gpio.o"
+"masterswordcode\stm32f1xx_hal_dma.o"
+"masterswordcode\stm32f1xx_hal_cortex.o"
+"masterswordcode\stm32f1xx_hal_pwr.o"
+"masterswordcode\stm32f1xx_hal_flash.o"
+"masterswordcode\stm32f1xx_hal_flash_ex.o"
+"masterswordcode\stm32f1xx_hal_exti.o"
+"masterswordcode\system_stm32f1xx.o"
+--strict --scatter "MasterSwordCode\MasterSwordCode.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "MasterSwordCode.map" -o MasterSwordCode\MasterSwordCode.axf
