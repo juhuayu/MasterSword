@@ -100,7 +100,6 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 	
-	
 	printf("---------start!---------\n");
 
 	HAL_Delay(100);
@@ -111,7 +110,6 @@ int main(void)
 	
 	while (MPU6050_Init(&hi2c1) == 1);
 	printf("---------MPU6050_Init ok---------\n");
-
 	
   /* USER CODE END 2 */
 

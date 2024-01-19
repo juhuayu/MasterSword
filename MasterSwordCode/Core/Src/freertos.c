@@ -183,6 +183,7 @@ void StartGravity(void const * argument)
   for(;;)
   {
 		MPU6050_Read_All(&hi2c1, &MPU6050);
+		
 		printf("x:%f -- y:%f\n", MPU6050.Ax, MPU6050.Ay);
     osDelay(100);
   }

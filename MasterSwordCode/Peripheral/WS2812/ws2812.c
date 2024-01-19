@@ -161,8 +161,9 @@ void rainbowCycle(uint8_t wait)
 			WS2812_SetPixelColor(i, Wheel(((i * 256 / (PIXEL_NUM)) + j) & 255));
 		}
 	}
-	WS_Load1();
 	WS_Load2();
+	WS_Load1();
+	
 	
 }
 

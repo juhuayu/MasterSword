@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "rc522.h"
+#include "ws2812.h"
 
 uint8_t 	i;
 uint8_t 	j;

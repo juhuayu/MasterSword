@@ -830,8 +830,8 @@ Section Cross References
     ws2812.o(i.rainbowCycle) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
     ws2812.o(i.rainbowCycle) refers to ws2812.o(i.Wheel) for Wheel
     ws2812.o(i.rainbowCycle) refers to ws2812.o(i.WS2812_SetPixelColor) for WS2812_SetPixelColor
-    ws2812.o(i.rainbowCycle) refers to ws2812.o(i.WS_Load1) for WS_Load1
     ws2812.o(i.rainbowCycle) refers to ws2812.o(i.WS_Load2) for WS_Load2
+    ws2812.o(i.rainbowCycle) refers to ws2812.o(i.WS_Load1) for WS_Load1
     ws2812.o(i.rainbowCycle) refers to ws2812.o(.data) for .data
     event_groups.o(i.vEventGroupClearBitsCallback) refers to event_groups.o(i.xEventGroupClearBits) for xEventGroupClearBits
     event_groups.o(i.vEventGroupDelete) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
@@ -2801,17 +2801,17 @@ Image Symbol Table
     .bss                                     0x20000578   Section       72  usart.o(.bss)
     .bss                                     0x200005c0   Section       72  stm32f1xx_hal_timebase_tim.o(.bss)
     .bss                                     0x20000608   Section       42  rc522_use.o(.bss)
-    .bss                                     0x20000632   Section     1176  ws2812.o(.bss)
-    .bss                                     0x20000acc   Section      240  tasks.o(.bss)
-    pxReadyTasksLists                        0x20000acc   Data         140  tasks.o(.bss)
-    xDelayedTaskList1                        0x20000b58   Data          20  tasks.o(.bss)
-    xDelayedTaskList2                        0x20000b6c   Data          20  tasks.o(.bss)
-    xPendingReadyList                        0x20000b80   Data          20  tasks.o(.bss)
-    xTasksWaitingTermination                 0x20000b94   Data          20  tasks.o(.bss)
-    xSuspendedTaskList                       0x20000ba8   Data          20  tasks.o(.bss)
-    .bss                                     0x20000bbc   Section     3072  heap_4.o(.bss)
-    ucHeap                                   0x20000bbc   Data        3072  heap_4.o(.bss)
-    STACK                                    0x200017c0   Section     1024  startup_stm32f103xb.o(STACK)
+    .bss                                     0x20000632   Section     2184  ws2812.o(.bss)
+    .bss                                     0x20000ebc   Section      240  tasks.o(.bss)
+    pxReadyTasksLists                        0x20000ebc   Data         140  tasks.o(.bss)
+    xDelayedTaskList1                        0x20000f48   Data          20  tasks.o(.bss)
+    xDelayedTaskList2                        0x20000f5c   Data          20  tasks.o(.bss)
+    xPendingReadyList                        0x20000f70   Data          20  tasks.o(.bss)
+    xTasksWaitingTermination                 0x20000f84   Data          20  tasks.o(.bss)
+    xSuspendedTaskList                       0x20000f98   Data          20  tasks.o(.bss)
+    .bss                                     0x20000fac   Section     3072  heap_4.o(.bss)
+    ucHeap                                   0x20000fac   Data        3072  heap_4.o(.bss)
+    STACK                                    0x20001bb0   Section     1024  startup_stm32f103xb.o(STACK)
 
     Global Symbols
 
@@ -3159,8 +3159,8 @@ Image Symbol Table
     SN                                       0x20000608   Data          16  rc522_use.o(.bss)
     retstr                                   0x20000618   Data          10  rc522_use.o(.bss)
     R_DATA                                   0x20000622   Data          16  rc522_use.o(.bss)
-    send_Buf                                 0x20000632   Data        1176  ws2812.o(.bss)
-    __initial_sp                             0x20001bc0   Data           0  startup_stm32f103xb.o(STACK)
+    send_Buf                                 0x20000632   Data        2184  ws2812.o(.bss)
+    __initial_sp                             0x20001fb0   Data           0  startup_stm32f103xb.o(STACK)
 
 
 
@@ -3422,7 +3422,7 @@ Memory Map of the image
     0x080058e4   0x080058e4   0x00000020   Data   RO         5806    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08005904, Size: 0x00001bc0, Max: 0x00005000, ABSOLUTE, COMPRESSED[0x00000030])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08005904, Size: 0x00001fb0, Max: 0x00005000, ABSOLUTE, COMPRESSED[0x00000030])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3445,12 +3445,12 @@ Memory Map of the image
     0x20000578        -       0x00000048   Zero   RW          482    .bss                usart.o
     0x200005c0        -       0x00000048   Zero   RW          629    .bss                stm32f1xx_hal_timebase_tim.o
     0x20000608        -       0x0000002a   Zero   RW         4032    .bss                rc522_use.o
-    0x20000632        -       0x00000498   Zero   RW         4082    .bss                ws2812.o
-    0x20000aca   COMPRESSED   0x00000002   PAD
-    0x20000acc        -       0x000000f0   Zero   RW         4661    .bss                tasks.o
-    0x20000bbc        -       0x00000c00   Zero   RW         5291    .bss                heap_4.o
-    0x200017bc   COMPRESSED   0x00000004   PAD
-    0x200017c0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
+    0x20000632        -       0x00000888   Zero   RW         4082    .bss                ws2812.o
+    0x20000eba   COMPRESSED   0x00000002   PAD
+    0x20000ebc        -       0x000000f0   Zero   RW         4661    .bss                tasks.o
+    0x20000fac        -       0x00000c00   Zero   RW         5291    .bss                heap_4.o
+    0x20001bac   COMPRESSED   0x00000004   PAD
+    0x20001bb0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
 
 
 ==============================================================================
@@ -3468,7 +3468,7 @@ Image component sizes
        460         24          0         24       3072       7203   heap_4.o
        176         30          0          0         84       1645   i2c.o
        138          0          0          0          0       3366   list.o
-       310        112          0          0          0     475956   main.o
+       310        112          0          0          0     475952   main.o
       1118         40          0        152          0       4334   mpu6050.o
        578         60          0         12          0      10292   port.o
       1186         18          0          0          0      12229   rc522.o
@@ -3493,10 +3493,10 @@ Image component sizes
       1506        110          0         60        240      16046   tasks.o
        336         40          0          0        208       2419   tim.o
        192         24          0          0         72       2190   usart.o
-       264         28          0         12       1176       4070   ws2812.o
+       264         28          0         12       2184       4070   ws2812.o
 
     ----------------------------------------------------------------------
-     16358       1114        468        324       6768     684547   Object Totals
+     16358       1114        468        324       7776     684543   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         32          0          2          0          6          0   (incl. Padding)
 
@@ -3572,14 +3572,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     22160       1340        628        332       6772     678031   Grand Totals
-     22160       1340        628         48       6772     678031   ELF Image Totals (compressed)
+     22160       1340        628        332       7780     678027   Grand Totals
+     22160       1340        628         48       7780     678027   ELF Image Totals (compressed)
      22160       1340        628         48          0          0   ROM Totals
 
 ==============================================================================
 
     Total RO  Size (Code + RO Data)                22788 (  22.25kB)
-    Total RW  Size (RW Data + ZI Data)              7104 (   6.94kB)
+    Total RW  Size (RW Data + ZI Data)              8112 (   7.92kB)
     Total ROM Size (Code + RO Data + RW Data)      22836 (  22.30kB)
 
 ==============================================================================
