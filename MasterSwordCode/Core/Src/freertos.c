@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * File Name          : freertos.c
-  * Description        : Code for freertos applications
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2024 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * File Name          : freertos.c
+ * Description        : Code for freertos applications
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -60,21 +60,21 @@ osThreadId SwipingCardHandle;
 
 /* USER CODE END FunctionPrototypes */
 
-void StartDefaultTask(void const * argument);
-void StartSideLight(void const * argument);
-void StartGravity(void const * argument);
-void StartSwipingCard(void const * argument);
+void StartDefaultTask(void const *argument);
+void StartSideLight(void const *argument);
+void StartGravity(void const *argument);
+void StartSwipingCard(void const *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
-void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize);
 
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
 static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
 
-void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
+void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize)
 {
   *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
   *ppxIdleTaskStackBuffer = &xIdleStack[0];
@@ -84,13 +84,14 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
 /* USER CODE END GET_IDLE_TASK_MEMORY */
 
 /**
-  * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
-  */
-void MX_FREERTOS_Init(void) {
+ * @brief  FreeRTOS initialization
+ * @param  None
+ * @retval None
+ */
+void MX_FREERTOS_Init(void)
+{
   /* USER CODE BEGIN Init */
-	MFRC522_Init();
+  MFRC522_Init();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -129,21 +130,20 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
-
 }
 
 /* USER CODE BEGIN Header_StartDefaultTask */
 /**
-  * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
+ * @brief  Function implementing the defaultTask thread.
+ * @param  argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
+void StartDefaultTask(void const *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
-  for(;;)
+  for (;;)
   {
     osDelay(1);
   }
@@ -152,39 +152,46 @@ void StartDefaultTask(void const * argument)
 
 /* USER CODE BEGIN Header_StartSideLight */
 /**
-* @brief Function implementing the SideLight thread.
-* @param argument: Not used
-* @retval None
-*/
+ * @brief Function implementing the SideLight thread.
+ * @param argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_StartSideLight */
-void StartSideLight(void const * argument)
+void StartSideLight(void const *argument)
 {
   /* USER CODE BEGIN StartSideLight */
   /* Infinite loop */
-  for(;;)
+  for (;;)
   {
     osDelay(1);
-		rainbowCycle(20);
+    rainbowCycle(20);
   }
   /* USER CODE END StartSideLight */
 }
 
 /* USER CODE BEGIN Header_StartGravity */
 /**
-* @brief Function implementing the Gravity thread.
-* @param argument: Not used
-* @retval None
-*/
+ * @brief Function implementing the Gravity thread.
+ * @param argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_StartGravity */
-void StartGravity(void const * argument)
+void StartGravity(void const *argument)
 {
   /* USER CODE BEGIN StartGravity */
   /* Infinite loop */
-  for(;;)
+  for (;;)
   {
-		MPU6050_Read_All(&hi2c1, &MPU6050);
-		
-		printf("x:%f -- y:%f\n", MPU6050.Ax, MPU6050.Ay);
+    MPU6050_Read_All(&hi2c1, &MPU6050);
+    WS_CloseAll();
+    printf("x:%f -- y:%f\n", MPU6050.Ax, MPU6050.Ay);
+    double g_count = MPU6050.Gx + MPU6050.Gy + MPU6050.Gz;
+    uint16_t count = (uint16_t)g_count;
+    count = count > 20 ? 20 : count;
+    for (int i = 0; i < count; i++)
+    {
+      WS2812_SetPixelColor(i, 0x0000ff);
+    }
     osDelay(100);
   }
   /* USER CODE END StartGravity */
@@ -192,18 +199,18 @@ void StartGravity(void const * argument)
 
 /* USER CODE BEGIN Header_StartSwipingCard */
 /**
-* @brief Function implementing the SwipingCard thread.
-* @param argument: Not used
-* @retval None
-*/
+ * @brief Function implementing the SwipingCard thread.
+ * @param argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_StartSwipingCard */
-void StartSwipingCard(void const * argument)
+void StartSwipingCard(void const *argument)
 {
   /* USER CODE BEGIN StartSwipingCard */
   /* Infinite loop */
-  for(;;)
+  for (;;)
   {
-		rc522_test();
+    rc522_test();
     osDelay(1);
   }
   /* USER CODE END StartSwipingCard */
@@ -213,4 +220,3 @@ void StartSwipingCard(void const * argument)
 /* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
-
